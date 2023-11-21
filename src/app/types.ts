@@ -13,3 +13,12 @@ export type TypesTitle = {
   english?: string | null;
   textAlign?: string | null;
 }
+
+export type TypesCustomButton = {
+  text?: string | null;
+  href?: string | null;
+  isTarget?: boolean | true;
+  bgcolor?: string | null;
+  border?: string | null;
+  borderColor?: string | null;
+}
