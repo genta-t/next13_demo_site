@@ -7,3 +7,9 @@ export type TypesBoxTypo = {
   ff?: string | null;
   children?: string | null;
 }
+
+export type TypesTitle = {
+  japanese?: string | null;
+  english?: string | null;
+  textAlign?: string | null;
+}

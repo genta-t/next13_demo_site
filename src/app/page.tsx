@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Box, Grid } from '@mui/material';
-import BoxTypo from './components/BoxTypo';
+import BoxTypo from './components/items/BoxTypo';
+import Title from './components/items/Title';
 
 const Home = () => {
   return (
@@ -13,15 +14,11 @@ const Home = () => {
               </Box>
             </Grid>
             <Grid item xs={6}>
-              <BoxTypo ff="Inter" fs="L" lh="150%" color="red">
-                あENG11
-              </BoxTypo>
-              <BoxTypo ff="Notosans" fs="L" lh="150%" color="red">
-                あENG11
-              </BoxTypo>
-              <BoxTypo ff="Notosans" fs="P" fw="medium" lh="150%" color="red">
-                ああああああ
-              </BoxTypo>
+              <Title
+                japanese={"てきすとああああああああああああああああああああああああああああああああ"}
+                english={"TEXT"}
+                textAlign={"center"}
+              />
             </Grid>
           </Grid>
         </Box>

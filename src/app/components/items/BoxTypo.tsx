@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { TypesBoxTypo } from "../types";
+import { TypesBoxTypo } from "../../types";
 import { Inter, Noto_Sans_JP } from "next/font/google";
 
 const inter = Inter({ preload: true, subsets: ['latin'] });
@@ -46,7 +46,7 @@ const BoxTypo = ({
           ? "#333333"
           : color === "white"
           ? "#ffffff"
-          : "#333333"
+          : "#ffffff"
       }
       fontWeight={
         fw === "Bold"
@@ -55,7 +55,7 @@ const BoxTypo = ({
           ? "normal"
           : fw === "medium"
           ? "medium"
-          : "Bold"
+          : "normal"
       }
     >
       <p
