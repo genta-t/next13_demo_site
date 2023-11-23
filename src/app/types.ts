@@ -22,3 +22,12 @@ export type TypesCustomButton = {
   border?: string | null;
   borderColor?: string | null;
 }
+
+export type TypesFV = {
+  src: string;
+}
+
+export type TypesMenuBarButton = {
+  text: string;
+  onClick: () => void;
+}

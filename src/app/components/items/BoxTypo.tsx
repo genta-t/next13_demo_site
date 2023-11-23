@@ -15,7 +15,6 @@ const BoxTypo = ({
   ff = null,
   children = null,
 }: TypesBoxTypo) => {
-  
   return (
     <Box
       fontSize={

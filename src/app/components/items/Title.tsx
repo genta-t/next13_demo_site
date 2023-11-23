@@ -8,7 +8,6 @@ const Title = ({
   english = null,
   textAlign = null,
 }: TypesTitle ) => {
-  
   return (
     <Box sx={{ textAlign: textAlign }}>
       <BoxTypo

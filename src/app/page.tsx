@@ -1,11 +1,16 @@
-import Image from 'next/image'
+'use client'
+import Image from 'next/image';
 import { Box, Grid } from '@mui/material';
 import Title from './components/items/Title';
 import CustomButton from './components/items/CustomButton';
+import FV from './components/FV';
+import Header from './components/Header';
 
 const Home = () => {
   return (
       <>
+        <Header />
+        <FV src='fv'/>
         <Box width="90%" m="auto" maxWidth="1200px">
           <Title
             japanese={"てきすとああああああああああああああああああああああああああああああああ"}
@@ -32,3 +37,4 @@ const Home = () => {
 }
 
 export default Home;
+
