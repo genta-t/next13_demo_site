@@ -31,3 +31,13 @@ export type TypesMenuBarButton = {
   text: string;
   onClick: () => void;
 }
+
+export type TypesNl2br = {
+  text: string | null;
+}
+
+export type TypesGradationButton = {
+  text: string;
+  href?: string | null;
+  isTarget?: boolean | true;
+}

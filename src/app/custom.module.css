@@ -1,0 +1,11 @@
+.gradationButton { 
+  color: #FFFFFF;
+  border-radius: 1.3em;
+  background: #2E2E2E;
+  padding: 0.5em 1.8em 0.5em 2em;
+  transition: background-color 0.4s, color 0.4s;
+}
+.gradationButton:hover {
+  background: #FFFFFF;
+  color: #2E2E2E;
+}

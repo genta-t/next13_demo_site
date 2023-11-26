@@ -26,7 +26,7 @@ const CustomButton = ({
         borderRadius="8px"
       >
         <BoxTypo
-          ff="Notosans"
+          ff="Inter"
           fs="S"
           color="black"
           >

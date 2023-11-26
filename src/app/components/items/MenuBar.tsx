@@ -33,10 +33,7 @@ const MenuBar = () => {
 
   return (
     <>
-      <Box
-        height="1vh"
-        style={isOpen == true ? { display: "none" } : { display: "block" }}
-      >
+      <Box style={isOpen == true ? { display: "none" } : { display: "block" }}>
         <MenuBarButton text={"MENU"} onClick={() => setOpen(!isOpen)}/>
       </Box>
       <Box

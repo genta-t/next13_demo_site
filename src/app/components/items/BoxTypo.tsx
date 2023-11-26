@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import { TypesBoxTypo } from "../../types";
 import { Inter, Noto_Sans_JP } from "next/font/google";
+import { Nl2br } from "./utility";
 
 const inter = Inter({ preload: true, subsets: ['latin'] });
 const notoSansJP = Noto_Sans_JP({ preload: true, subsets: ['latin'] });
@@ -31,7 +32,9 @@ const BoxTypo = ({
           : { xs: "14px", md: "18px" }
       }
       lineHeight={
-        lh === "150%"
+        lh === "130%"
+          ? "130%"
+          : lh === "150%"
           ? "150%"
           : lh === "200%"
           ? "200%"
@@ -67,7 +70,7 @@ const BoxTypo = ({
             : "Inter, NotoSansJP, sans-serif",
         }}
       >
-        {children}
+        <Nl2br text={children}/>
       </p>
     </Box>
   );

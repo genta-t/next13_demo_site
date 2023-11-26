@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import BoxTypo from "./items/BoxTypo"
 import { Box, Grid } from "@mui/material"
 import MenuBar from "./items/MenuBar"
@@ -53,7 +53,7 @@ const Header = () => {
               >
                 {menus.map((m, key) => {
                   return (
-                    <Box ml="5vw" py="0.1em" key={key}>
+                    <Box ml="5vw" py="0.1em" key={key} display={{ xs: "none", md: "flex"}}>
                       <Link href={m.pageLink ? m.pageLink : ""} >
                         <Box display="inline-block">
                           <BoxTypo
