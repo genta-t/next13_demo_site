@@ -4,6 +4,7 @@ import { Box, Grid } from "@mui/material"
 import MenuBar from "./items/MenuBar"
 import Link from "next/link"
 import TopPageButton from "./items/TopPageButton"
+import HoverText from "./items/HoverText"
 
 const Header = () => {
   const menus = [
@@ -56,19 +57,16 @@ const Header = () => {
                     <Box ml="5vw" py="0.1em" key={key} display={{ xs: "none", md: "flex"}}>
                       <Link href={m.pageLink ? m.pageLink : ""} >
                         <Box display="inline-block">
-                          <BoxTypo
+                          <HoverText 
+                            text={m.name}
                             ff="Inter"
-                            fs="S"
-                            ls="0.1rem"
-                          >
-                            {m.name}
-                          </BoxTypo>
+                          />
                         </Box>
                       </Link>
                     </Box>
                   )
                 })}
-                <Box ml="3vw">
+                <Box ml="4vw">
                   <MenuBar />
                 </Box>
               </Box>

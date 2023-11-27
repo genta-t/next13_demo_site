@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Button } from "@mui/material";
 import Image from "next/image";
 import BoxTypo from "./items/BoxTypo";
 import GradationButton from "./items/GradationButton";
@@ -10,7 +10,7 @@ const Section1 = () => {
   DEMO`
   const description =`テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
   テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト`
-  
+
   return (
     <>
       <Box width="90%" m="auto" maxWidth="1300px">

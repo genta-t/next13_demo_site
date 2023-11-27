@@ -4,6 +4,10 @@ import { Box, Button, Grid } from "@mui/material"
 import TopPageButton from "./TopPageButton"
 import { TypesMenuBarButton } from "@/app/types"
 import Link from "next/link"
+import { Inter } from "next/font/google"
+
+
+const inter = Inter({ preload: true, subsets: ['latin'] });
 
 const MenuBar = () => {
   const menus = [
@@ -146,20 +150,25 @@ const MenuBarButton = ({text, onClick}: TypesMenuBarButton) => {
           display="inline-block"
         >
           <Box
-            style={{ 
+            sx={{
+              color: "#FFFFFF",
               borderRadius: "1.2em",
               background: "#2E2E2E",
+              padding: "0.3em 1.2em 0.3em 1.5em",
+              transition: "background-color 0.4s, color 0.4s",
+              '&:hover': { 
+                color: "#2E2E2E",
+                background: "#FFFFFF",
+              }
             }}
-            p="0.3em 1.2em 0.3em 1.5em"
+            fontSize={{ xs: "12px", md: "14px" }}
+            letterSpacing="0.2rem"
+            lineHeight="150%"
+            fontWeight="medium"
           >
-            <BoxTypo
-              ff="NotoSans"
-              fs="S"
-              fw="700"
-              lh="150%"
-            >
+            <p style={{ fontFamily: inter.style.fontFamily }}>
               {text}
-            </BoxTypo>
+            </p>
           </Box>
         </Box>
       </Button>

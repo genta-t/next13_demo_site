@@ -2,7 +2,6 @@ import React from "react"
 import { Box } from "@mui/material"
 import { TypesGradationButton } from "@/app/types"
 import Link from "next/link"
-import styles from "../../custom.module.css"
 import { Inter } from "next/font/google"
 
 
@@ -20,7 +19,7 @@ const GradationButton = ({
         passHref
         target={isTarget ? "_blank" : ""}
         rel={isTarget ? "noopener noreferrer" : ""}
-      >
+        >
         <Box
           style={{ 
             background: "linear-gradient(90deg, #B392F8 0%, #F1A0C4 33.33%, #F2AB43 66.67%, #A8EF4D 100%)",
@@ -30,9 +29,19 @@ const GradationButton = ({
           display="inline-block"
         >
           <Box
-            className={styles.gradationButton}
             fontSize={{ xs: "14px", md: "18px" }}
             letterSpacing="0.2rem"
+            sx={{
+              color: "#FFFFFF",
+              borderRadius: "1.3em",
+              background: "#2E2E2E",
+              padding: "0.5em 1.8em 0.5em 2em",
+              transition: "background-color 0.4s, color 0.4s",
+              '&:hover': { 
+                color: "#2E2E2E",
+                background: "#FFFFFF",
+              } 
+            }}
           >
             <p style={{ fontFamily: inter.style.fontFamily }}>
               {text}

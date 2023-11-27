@@ -41,3 +41,11 @@ export type TypesGradationButton = {
   href?: string | null;
   isTarget?: boolean | true;
 }
+
+export type TypesHoverText = {
+  text: string;
+  fs?: string | null;
+  fw?: string | null;
+  ff?: string | null;
+  lh?: string | null;
+}
