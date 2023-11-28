@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const TopPageButton = () => {
   return (
-    <Link href="#">
+    <Link href="/">
       <Box display="inline-block">
         <BoxTypo
           ff="Inter"
