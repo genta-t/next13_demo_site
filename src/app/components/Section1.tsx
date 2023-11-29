@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Button } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import Image from "next/image";
 import BoxTypo from "./items/BoxTypo";
 import GradationButton from "./items/GradationButton";
