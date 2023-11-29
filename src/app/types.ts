@@ -49,3 +49,9 @@ export type TypesHoverText = {
   ff?: string | null;
   lh?: string | null;
 }
+
+export type TypesCharacterDrawer = {
+  name: string;
+  image: string;
+  description: string;
+}
