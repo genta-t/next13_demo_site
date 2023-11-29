@@ -1,4 +1,5 @@
 'use client'
+import Character from './components/Character';
 import FV from './components/FV';
 import Header from './components/Header';
 import Section1 from './components/Section1';
@@ -14,6 +15,8 @@ const Home = () => {
         <Section1 />
         <SectionMb />
         <Section2 />
+        <SectionMb />
+        <Character />
         <SectionMb />
         {/* でもでお知らせページをmicroCMSで作成する */}
       </>  
