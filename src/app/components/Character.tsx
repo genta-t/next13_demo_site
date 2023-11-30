@@ -109,26 +109,28 @@ const Character = () => {
             return(
               <Grid item xs={12} md={6} lg={4} key={i}>
                 <Box width={{ xs: "90%", md: "100%" }} maxWidth="600px" m="auto">
-                  <Box width="100%">
-                    <Image src={`/images/${c.image}.png`} layout="responsive" width={100} height={100} alt="" />
-                  </Box>
-                  <BoxTypo
-                    ff="Inter"
-                    fs="M"
-                    fw="medium"
-                  >
-                    {c.name}
-                  </BoxTypo>
                   <button
                     key={i}
                     onClick={() => {setIsOpen(c => !c); setItem(i);}}
                   >
+                  <Box width="100%" mb="8px">
+                    <Image src={`/images/${c.image}.png`} layout="responsive" width={100} height={100} alt="" />
+                  </Box>
+                  <Box textAlign="left">
+                    <BoxTypo
+                      ff="Inter"
+                      fs="M"
+                      fw="medium"
+                    >
+                      {c.name}
+                    </BoxTypo>
                     <Box display="inline-block">
                       <HoverText
                         text={"more　→"}
                         ff="Inter"
                       />
                     </Box>
+                  </Box>
                   </button>
                 </Box>
               </Grid>

@@ -55,3 +55,21 @@ export type TypesCharacterDrawer = {
   image: string;
   description: string;
 }
+
+export type TypesNews = {
+  id: string;
+  title: string;
+  description: string;
+  image?: string;
+}
+
+export type TypesNewsArray = {
+  id: string;
+  title: string;
+  details: TypesNewsDetail[]
+}
+
+export type TypesNewsDetail = {
+  description: string;
+  image?: string;
+}

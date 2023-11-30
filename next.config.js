@@ -6,7 +6,8 @@ const nextConfig = {
     unoptimized: true,
     domains: [
       '/',
-      '/tests'
+      '/tests/',
+      '/news/'
     ],
   },
 }
