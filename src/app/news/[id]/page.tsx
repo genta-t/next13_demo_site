@@ -1,13 +1,13 @@
 "use client"
 import React, { useEffect, useState } from "react";
-import { news, newsArray } from "@/app/api/data";
+import { news, newsArray } from "@/app/tsfile/data";
 import { Box } from "@mui/material";
 import BoxTypo from "@/app/components/items/BoxTypo";
 import Header from "@/app/components/Header";
 import Image from "next/image";
 import SectionMb from "@/app/components/items/SectionMb";
 import CustomButton from "@/app/components/items/CustomButton";
-import { getNewsDetail } from "@/app/api/microCMSApi";
+import { getNewsDetail } from "@/app/tsfile/microCMSApi";
 import { TypeNewsDetailProps, TypesGetDetailParams, TypesNewsMicroCMS } from "@/app/types";
 import FollowButton from "@/app/components/items/FollowButton";
 import Link from "next/link";
