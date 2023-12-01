@@ -1,0 +1,27 @@
+.input {
+  font-size: 18px;
+  width: 100%;
+  border: none;
+  padding: 1em;
+  background-color: #cccccc;
+}
+
+.textarea {
+  height: 400px;
+  font-size: 18px;
+  width: 100%;
+  border: 0;
+  padding: 1em;
+  background-color: #cccccc;
+}
+
+@media (max-width: 899px) {
+  .input {
+    font-size: 14px;
+  }
+
+  .textarea {
+    height: 320px;
+    font-size: 14px;
+  }
+}

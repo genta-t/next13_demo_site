@@ -5,7 +5,7 @@ import BoxTypo from "./items/BoxTypo";
 import Title from "./items/Title";
 import HoverText from "./items/HoverText";
 import Link from "next/link";
-import { getNewsList } from "../api/microCMSApi";
+import { getNewsList } from "../tsfile/microCMSApi";
 import { TypesNewsMicroCMS } from "../types";
 
 const News = () => {

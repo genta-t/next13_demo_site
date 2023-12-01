@@ -99,3 +99,29 @@ export type TypeNewsDetailProps = {
 export type TypesFollowButton = {
   to: string;
 };
+
+export type TypesFormButton = {
+  name: string;
+};
+
+export type TypesFormItem = {
+  title: string;
+  placeholder: string;
+  name: string;
+  register: any;
+  rule: any;
+  requiredItemFlag: boolean;
+};
+
+export type TypesFormData = {
+  name: string;
+  age: string;
+  addles: string;
+  tel: string;
+  mail: string;
+  content: string;
+};
+
+export type TypesErrorMessageProps = {
+  message: string;
+}

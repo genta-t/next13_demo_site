@@ -1,5 +1,6 @@
 'use client'
 import Character from './components/Character';
+import ContactForms from './components/ContactForms';
 import FV from './components/FV';
 import Header from './components/Header';
 import News from './components/News';
@@ -20,6 +21,8 @@ const Home = () => {
         <Character />
         <SectionMb />
         <News />
+        <SectionMb />
+        <ContactForms />
         <SectionMb />
       </>  
     )
