@@ -31,13 +31,15 @@ const News = () => {
           />
         </Box>
         {(!contents || contents.length === 0) ? (
-          <BoxTypo ff="Inter" fs="S" fw="Bold">
-            No contents
-          </BoxTypo>
+          <Box textAlign="center">
+            <BoxTypo ff="Inter" fs="S">
+              ... no contents
+            </BoxTypo>
+          </Box>
         ) : (
           <></>
         )}
-        <Grid container alignItems="center" spacing={{ xs: 5, md: 8 }}> 
+        <Grid container spacing={{ xs: 5, md: 8 }}> 
           {contents && contents.map((n) => {
             return(
               <Grid item xs={12} md={6} lg={4} key={n.id}>
