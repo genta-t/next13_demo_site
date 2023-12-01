@@ -95,3 +95,7 @@ export type TypesGetDetailParams = {
 export type TypeNewsDetailProps = {
   item: TypesNewsMicroCMS;
 };
+
+export type TypesFollowButton = {
+  to: string;
+};

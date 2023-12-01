@@ -9,6 +9,8 @@ import SectionMb from "@/app/components/items/SectionMb";
 import CustomButton from "@/app/components/items/CustomButton";
 import { getNewsDetail } from "@/app/api/microCMSApi";
 import { TypeNewsDetailProps, TypesGetDetailParams, TypesNewsMicroCMS } from "@/app/types";
+import FollowButton from "@/app/components/items/FollowButton";
+import Link from "next/link";
 
 const NewsDetail = ({ params, searchParams }: TypesGetDetailParams) => {
   const [item, setItem] = useState<TypesNewsMicroCMS | null>(null);
@@ -48,21 +50,23 @@ const NewsDetailProps = ({ item }: TypeNewsDetailProps) => {
       <Box mt="200px">
         <Box width="90%" maxWidth="1000px" m="auto">
           <Box textAlign="right" mb="40px">
-            <Box 
-              display="inline-block"
-              bgcolor="#FFFFFF"
-              p={{ xs: "8px 16px", md: "8px 24px" }}
-              borderRadius="0.4em"
-            >
-              <BoxTypo
-                ff="Inter"
-                fs="S"
-                lh="150%"
-                color="black"
+            <section id="news-title">
+              <Box
+                display="inline-block"
+                bgcolor="#FFFFFF"
+                p={{ xs: "8px 16px", md: "8px 24px" }}
+                borderRadius="0.4em"
               >
-                {formattedDate}
-              </BoxTypo>
-            </Box>
+                <BoxTypo
+                  ff="Inter"
+                  fs="S"
+                  lh="150%"
+                  color="black"
+                >
+                  {formattedDate}
+                </BoxTypo>
+              </Box>
+            </section>
           </Box>
           <Box textAlign="justify">
             <Box mb={{ xs: "32px", md: "56px"}}>
@@ -87,7 +91,6 @@ const NewsDetailProps = ({ item }: TypeNewsDetailProps) => {
             <BoxTypo
               ff="Notosans"
               fs="P"
-              lh="150%"
             >
               {item.description}
             </BoxTypo>
@@ -103,6 +106,7 @@ const NewsDetailProps = ({ item }: TypeNewsDetailProps) => {
           </Box>
         </Box>
       </Box>
+      <FollowButton to="news-title" />
     </>
   );
 };
