@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import { news, newsArray } from "@/app/api/data";
 import { Box } from "@mui/material";
 import BoxTypo from "@/app/components/items/BoxTypo";
@@ -7,19 +8,26 @@ import Image from "next/image";
 import SectionMb from "@/app/components/items/SectionMb";
 import CustomButton from "@/app/components/items/CustomButton";
 import { getNewsDetail } from "@/app/api/microCMSApi";
-import { TypeNewsDetailProps, TypesGetDetailParams } from "@/app/types";
+import { TypeNewsDetailProps, TypesGetDetailParams, TypesNewsMicroCMS } from "@/app/types";
 
-const NewsDetail = async ({ params, searchParams }: TypesGetDetailParams) => {
-  const item = await getNewsDetail(params.id, {
-    draftKey: searchParams.dk,
-  });
+const NewsDetail = ({ params, searchParams }: TypesGetDetailParams) => {
+  const [item, setItem] = useState<TypesNewsMicroCMS | null>(null);
 
-  return <NewsDetailProps item={item} />;
+  useEffect(() => {
+    const fetchNewsDetail = async () => {
+      const result = await getNewsDetail(params.id, { draftKey: searchParams.dk });
+      setItem(result);
+    };
+
+    fetchNewsDetail();
+  }, [params, searchParams]);
+
+  return item ? <NewsDetailProps item={item} /> : <></>;
 }
 
 export default NewsDetail;
 
-const NewsDetailProps = async ({ item }: TypeNewsDetailProps) => {
+const NewsDetailProps = ({ item }: TypeNewsDetailProps) => {
   // 直書き ↓
   // const { id: idParams } = params;
   // const item = news.find((i) => i.id === idParams);

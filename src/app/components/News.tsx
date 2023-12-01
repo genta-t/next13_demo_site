@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Grid } from "@mui/material";
 import Image from "next/image";
 import BoxTypo from "./items/BoxTypo";
@@ -6,19 +6,19 @@ import Title from "./items/Title";
 import HoverText from "./items/HoverText";
 import Link from "next/link";
 import { getNewsList } from "../api/microCMSApi";
+import { TypesNewsMicroCMS } from "../types";
 
-const News = async () => {
-  const contents = await getNewsList({
-    limit: 10,
-  });
+const News = () => {
+  const [contents, setContents] = useState<TypesNewsMicroCMS[] | null>(null);
 
-  if (!contents || contents.length === 0) {
-    return (
-      <BoxTypo ff="Inter" fs="LM" fw="Bold">
-        No contents
-      </BoxTypo>
-    );
-  }
+  useEffect(() => {
+    const fetchNews = async () => {
+      const result = await getNewsList({ limit: 10 });
+      setContents(result);
+    };
+
+    fetchNews();
+  }, []);
 
   return (
     <>
@@ -30,8 +30,15 @@ const News = async () => {
             textAlign="center"
           />
         </Box>
+        {(!contents || contents.length === 0) ? (
+          <BoxTypo ff="Inter" fs="S" fw="Bold">
+            No contents
+          </BoxTypo>
+        ) : (
+          <></>
+        )}
         <Grid container alignItems="center" spacing={{ xs: 5, md: 8 }}> 
-          {contents.map((n, i) => {
+          {contents && contents.map((n) => {
             return(
               <Grid item xs={12} md={6} lg={4} key={n.id}>
                 <Box width={{ xs: "90%", md: "100%" }} maxWidth="600px" m="auto">
