@@ -1,4 +1,4 @@
-import { TypesNewsArray } from "@/app/types"
+import { TypesNewsArray } from "@/app/types";
 
 export const news = [
   {

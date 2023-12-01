@@ -1,4 +1,3 @@
-"use client"
 import React from "react"
 import BoxTypo from "./items/BoxTypo"
 import { Box, Grid } from "@mui/material"

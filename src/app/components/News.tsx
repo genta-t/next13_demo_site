@@ -5,9 +5,21 @@ import BoxTypo from "./items/BoxTypo";
 import Title from "./items/Title";
 import HoverText from "./items/HoverText";
 import Link from "next/link";
-import { news, newsArray } from "./items/data";
+import { getNewsList } from "../api/microCMSApi";
 
-const News = () => {
+const News = async () => {
+  const contents = await getNewsList({
+    limit: 10,
+  });
+
+  if (!contents || contents.length === 0) {
+    return (
+      <BoxTypo ff="Inter" fs="LM" fw="Bold">
+        No contents
+      </BoxTypo>
+    );
+  }
+
   return (
     <>
       <Box width="90%" m="auto" maxWidth="1300px">
@@ -18,10 +30,10 @@ const News = () => {
             textAlign="center"
           />
         </Box>
-        <Grid container alignItems="center" spacing={{ xs: 5, md: 10}}> 
-          {/* {news.map((n, i) => {
+        <Grid container alignItems="center" spacing={{ xs: 5, md: 8 }}> 
+          {contents.map((n, i) => {
             return(
-              <Grid item xs={12} md={6} lg={4} key={i}>
+              <Grid item xs={12} md={6} lg={4} key={n.id}>
                 <Box width={{ xs: "90%", md: "100%" }} maxWidth="600px" m="auto">
                   <Link href={`/news/${n.id}/`}>
                     <Box
@@ -31,8 +43,8 @@ const News = () => {
                       position='relative'
                       mb="8px"
                     >
-                      {n.image ? (
-                        <Image src={`/images/${n.image}.png`} layout="fill" objectFit="cover" alt="" />
+                      {n.image?.url ? (
+                        <Image src={`${n.image.url}`} layout="fill" objectFit="cover" alt="" />
                       ): (
                         <Image src={`/images/no_image.png`} layout="fill" objectFit="cover" alt="" />
                       )}
@@ -54,8 +66,8 @@ const News = () => {
                 </Box>
               </Grid>
             )
-          })} */}
-          {newsArray.map((n, i) => {
+          })}
+          {/* {newsArray.map((n, i) => {
             const getFirstImage = n.details.find(detail => detail.image);
             let firstImage = getFirstImage ? getFirstImage.image : 'no_image';
 
@@ -89,7 +101,7 @@ const News = () => {
                 </Box>
               </Grid>
             )
-          })}
+          })} */}
         </Grid>
       </Box>
     </>

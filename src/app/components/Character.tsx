@@ -6,6 +6,7 @@ import Title from "./items/Title";
 import HoverText from "./items/HoverText";
 import { TypesCharacterDrawer } from "../types";
 
+
 const Character = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [item, setItem] = useState(0);

@@ -21,7 +21,6 @@ const Home = () => {
         <SectionMb />
         <News />
         <SectionMb />
-        {/* でもでお知らせページをmicroCMSで作成する */}
       </>  
     )
 }
