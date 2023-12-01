@@ -1,3 +1,5 @@
+import { MicroCMSContentId, MicroCMSDate, MicroCMSImage } from "microcms-js-sdk";
+
 export type TypesBoxTypo = {
   fs?: string | null;
   lh?: string | null;
@@ -55,3 +57,45 @@ export type TypesCharacterDrawer = {
   image: string;
   description: string;
 }
+
+export type TypesNews = {
+  id: string;
+  title: string;
+  description: string;
+  image?: string;
+}
+
+export type TypesNewsMicroCMS = {
+  id: string;
+  title: string;
+  description: string;
+  image?: MicroCMSImage;
+} & MicroCMSContentId & MicroCMSDate;
+
+export type TypesNewsArray = {
+  id: string;
+  title: string;
+  details: TypesNewsDetail[]
+}
+
+export type TypesNewsDetail = {
+  description: string;
+  image?: string;
+}
+
+export type TypesGetDetailParams = {
+  params: {
+    id: string;
+  };
+  searchParams: {
+    dk: string;
+  };
+}
+
+export type TypeNewsDetailProps = {
+  item: TypesNewsMicroCMS;
+};
+
+export type TypesFollowButton = {
+  to: string;
+};

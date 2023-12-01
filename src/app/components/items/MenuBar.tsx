@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react"
 import BoxTypo from "./BoxTypo"
 import { Box, Button, Grid } from "@mui/material"
